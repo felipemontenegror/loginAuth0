@@ -38,7 +38,7 @@ export default function Home() {
             </div>
 
             <div id="button-container">
-              <button onClick={() => signIn('auth0', { callbackUrl: 'http://localhost:3000/secret' })}>Singn in</button>
+              <button onClick={() => signIn('auth0')}>Singn in</button>
             </div>
 
           </div>
