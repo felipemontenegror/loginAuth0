@@ -5,10 +5,17 @@ import imgLogo from '../pages/image/Artboard_3.png';
 export default function Home() {
   const [session, loading] = useSession()
 
+//console.log(session)
+
+
   if (session) {
     return (
       <>
-        <p style={{color: '#fff'}}><h3>Voce está logado como: </h3>Email: {session.user.email}<br /> UserName: {session.user.name}<br /></p>
+        <span style={{color: '#fff'}}><h3>Voce está logado como: </h3>Email: {session.user.email}<br /> UserName: {session.user.name}<br />
+        <img style={{width: '50px'}} src={session.user.image} />
+        <br />
+        <br />
+        </span>
         <button onClick={() => signOut()}>Singn out</button>
 
         <h1 style={{color: '#fff'}}>BEM VINDO A PAGINA PRINCIPAL</h1>
