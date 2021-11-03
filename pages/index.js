@@ -1,11 +1,12 @@
 import { useSession, signIn, signOut } from "next-auth/client"
 import Image from 'next/image'
-import imgLogo from '../pages/image/Artboard_3.png';
+import imgLogo from '../pages/image/Artboard_3.png'
 
+//UseSession Hook passa unm objeto da sessao com as infos do usuario
 export default function Home() {
   const [session, loading] = useSession()
 
-//console.log(session)
+console.log(session)
 
 
   if (session) {
@@ -13,7 +14,6 @@ export default function Home() {
       <>
         <span style={{color: '#fff'}}><h3>Voce está logado como: </h3>Email: {session.user.email}<br /> UserName: {session.user.name}<br />
         <img style={{width: '50px'}} src={session.user.image} />
-        <br />
         <br />
         </span>
         <button onClick={() => signOut()}>Singn out</button>
@@ -26,9 +26,13 @@ export default function Home() {
 
   }
 
+
+
   if (loading) {
     return <h1 style={{color: '#fff'}}>carregando...</h1>
   } 
+
+
 
   return (
     <>
